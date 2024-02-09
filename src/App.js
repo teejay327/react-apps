@@ -1,4 +1,5 @@
-import WeatherApp from './projects/weather-app-v2.0/WeatherApp.jsx';
+import WeatherApp from './projects/weather-app-v2.0/Components/WeatherApp.jsx';
+import { DATA } from './data.js'; 
 
 const App = () => {
   return (
