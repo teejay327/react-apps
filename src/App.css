@@ -1,0 +1,11 @@
+.app-container {
+  background: linear-gradient(#065e81, #8ee0e0);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 70rem;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
