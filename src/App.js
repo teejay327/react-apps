@@ -12,7 +12,7 @@ const App = () => {
       <Header />
         <BrowserRouter >
           <Navbar />
-        </BrowserRouter>
+        </BrowserRouter >
       <WeatherApp />
     </div>
   );
