@@ -1,9 +1,14 @@
 .app-container {
   background: linear-gradient(#065e81, #8ee0e0);
-  height: auto;
+  height: 900px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: start;
+  font-size: 18px;
   color: white;
+}
+
+.logo-title {
+  align-content: start;
+  align-items: start
 }

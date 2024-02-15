@@ -8,13 +8,18 @@ import './App.css';
 
 const App = () => {
   return (
-    <div className='app-container'>
-      <Header />
+    <div className='app-container' >
+      <div className='logo-title'>
+        <Header />
+      </div>
+      <div >
         <BrowserRouter >
           <Navbar />
         </BrowserRouter >
-      <WeatherApp />
+        <WeatherApp />
+      </div>
     </div>
+ 
   );
 }
 
