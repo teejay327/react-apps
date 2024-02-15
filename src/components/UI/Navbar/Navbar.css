@@ -9,8 +9,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
+  max-height: 24px;
   position: fixed;
   top: 0;
   left: auto;
@@ -45,4 +44,9 @@ body {
 
 .navbar-elements:hover {
   background-color: seagreen;
+}
+
+.navbar-elements a:visited {
+  text-decoration: none;
+  color: slategray;
 }
