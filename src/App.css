@@ -3,7 +3,7 @@
   height: 900px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   font-size: 18px;
   color: white;
 }
@@ -11,4 +11,9 @@
 .logo-title {
   align-content: start;
   align-items: start
+}
+
+.weather-container {
+  justify-self: center;
+  align-self: center;
 }

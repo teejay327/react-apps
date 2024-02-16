@@ -1,9 +1,9 @@
 import WeatherApp from './projects/weather-app-v2.0/Components/WeatherApp.jsx';
 import { DATA } from './data.js'; 
-import Header from './components/UI/Header/Header';
-import Navbar from './components/UI/Navbar/Navbar.jsx';
+import Header from './projects/weather-app-v2.0/Components/UI/Header/Header.jsx';
+import Navbar from './projects/weather-app-v2.0/Components/UI/Navbar/Navbar.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import './components/UI/Header/Header.css';
+import './projects/weather-app-v2.0/Components/UI/Header/Header.css';
 import './App.css';
 
 const App = () => {
@@ -16,7 +16,9 @@ const App = () => {
         <BrowserRouter >
           <Navbar />
         </BrowserRouter >
-        <WeatherApp />
+        <div className='weather-container'>
+          <WeatherApp />  
+        </div>       
       </div>
     </div>
  
