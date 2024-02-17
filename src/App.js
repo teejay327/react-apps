@@ -1,5 +1,4 @@
 import WeatherApp from './projects/weather-app-v2.0/Components/WeatherApp.jsx';
-import { DATA } from './data.js'; 
 import Header from './projects/weather-app-v2.0/Components/UI/Header/Header.jsx';
 import Navbar from './projects/weather-app-v2.0/Components/UI/Navbar/Navbar.jsx';
 import { BrowserRouter } from 'react-router-dom';

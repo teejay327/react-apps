@@ -6,3 +6,18 @@
   align-items: center;
   margin: 30px 10px 30px 10px;
 }
+
+.weatherapp-text {
+  height: 300px;
+  width: 150px;
+}
+
+.weatherapp-forecast {
+  height: 300px;
+  width: 150px;
+}
+
+.weatherapp-stats {
+  height: 300px;
+  width: 150px;
+}

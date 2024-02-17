@@ -1,6 +1,5 @@
-import sunImg from '../../../../../../src/assets/sunny.png'
+import sunImg from '../../../assets/sunny.png';
 import './Header.css';
-
 
 const Header = () => {
 

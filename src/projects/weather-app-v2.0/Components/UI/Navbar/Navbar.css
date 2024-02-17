@@ -16,11 +16,6 @@ body {
   right: 0;
 }
 
-.navbar {
-  height: 60px;
-  position: relative;
-}
-
 .navbar-elements{
   color: #fff;
   align-items: stretch;
