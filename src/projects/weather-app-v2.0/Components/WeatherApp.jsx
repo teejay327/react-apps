@@ -1,18 +1,18 @@
-import CurrentStats from './CurrentStats';
+import Summary from './Summary';
 import './WeatherApp.css';
 
 const WeatherApp = (props) => {
 
   return (
     <div className='weatherapp-container'>
-      <CurrentStats />
-      <div className='weatherapp-forecast' >
-        <p>Forecast</p>
-        <p>26 degrees</p>
+      <div className='weatherapp-forecast'>
+        <div className='weatherapp-container-title'>
+          <h2>Today</h2>
+        </div>      
+        <Summary />
       </div>
       <div className='weatherapp-stats' >
-        <p>stats</p>
-        <p>2ml</p>
+
       </div>
     </div>
   )
