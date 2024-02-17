@@ -1,27 +1,30 @@
-.current-summary {
+.summary {
   display: flex;
+  flex-direction: column;
   margin: 12px 0;
-  font-size: 24px;
+  font-size: 22px;
   text-align: left;
   justify-content: space-between;
 }
 
-.current-summary p{
-  font-size: 0.7em;
+.summary p{
+  font-size: 0.75em;
 }
 
-.current-summary-temperatures {
-
+.summary-temperatures {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
 }
 
-.current-summary-humidity {
-
+.summary-humidity {
+  width: 50%;
 }
 
-.current-summary-rainfall {
-
+.summary-rainfall {
+  width: 50%;
 }
 
-.current-summary-wind {
-
+.summary-wind {
+  width: 50%;
 }

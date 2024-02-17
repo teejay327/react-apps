@@ -6,21 +6,22 @@
 }
 
 .weatherapp-container-title {
+  max-height: 30px;
   display: flex;
   justify-content: center;
 }
 
 .weatherapp-text {
   height: 300px;
-  width: 150px;
+  width: 225px;
 }
 
 .weatherapp-forecast {
   height: 300px;
-  width: 150px;
+  width: 450px;
 }
 
 .weatherapp-stats {
   height: 300px;
-  width: 150px;
+  width: 225px;
 }
