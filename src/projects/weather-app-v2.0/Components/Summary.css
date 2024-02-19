@@ -11,20 +11,13 @@
   font-size: 0.75em;
 }
 
-.summary-temperatures {
-  width: 50%;
+.summary-titles {
+  width: 60%;
   display: flex;
   flex-direction: row;
+  font-size: 1.25em;
 }
 
-.summary-humidity {
-  width: 50%;
-}
-
-.summary-rainfall {
-  width: 50%;
-}
-
-.summary-wind {
-  width: 50%;
+.summary-amounts {
+  margin: 10px 10px 10px 10px;
 }

@@ -5,23 +5,23 @@ const Summary = () => {
 
   return (
     <div className='summary'>
-       <div className='summary-temperatures'>
+       <div className='summary-titles'>
           <p>Currently</p>
-          <div>
+          <div className='summary-amounts'>
             { DATA.forecast.temperature } &#8451;
          </div>
        </div>
-       <div className='summary-humidity'>
+       <div className='summary-titles'>
           <p>Humidity</p>
-          <div>{ DATA.forecast.humidity }</div>
+          <div className='summary-amounts'>{ DATA.forecast.humidity }</div>
        </div>
-       <div className='summary-rainfall'>
+       <div className='summary-titles'>
           <p>Rain since 9am</p>
-          <div>{ DATA.forecast.rainfall }</div>
+          <div className='summary-amounts'>{ DATA.forecast.rainfall }</div>
        </div>
-       <div className='summary-wind'>
+       <div className='summary-titles'>
           <p>Wind</p>
-          <div>{ DATA.forecast.wind }</div>
+          <div className='summary-amounts'>{ DATA.forecast.wind }</div>
        </div>
     </div>
   )
