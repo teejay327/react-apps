@@ -5,7 +5,7 @@ const WeatherApp = (props) => {
 
   return (
     <div className='weatherapp-container'>
-      <div className='weatherapp-forecast'>
+      <div className='weatherapp-summary'>
         <div className='weatherapp-container-title'>
           <h2>Today</h2>
         </div>      

@@ -2,23 +2,29 @@
   display: flex;
   flex-direction: column;
   margin: 12px 0;
-  font-size: 22px;
+  font-size: 20px;
   text-align: left;
   justify-content: space-between;
 }
 
 .summary p{
-  font-size: 0.75em;
+  font-size: 0.8em;
+}
+
+.summary-section {
+  display: flex;
 }
 
 .summary-titles {
-  width: 150px;
+  width: 180px;
   display: flex;
   flex-direction: row;
-  font-size: 1.25em;
+  font-size: 1.4em;
 }
 
 .summary-amounts {
-  width: 150px;
+  width: 220px;
+  font-size: 1.8em;
   margin: 10px 10px 10px 10px;
+
 }

@@ -2,14 +2,16 @@
   display: flex;
   height: 350px;
   width: auto;
+  justify-content: center;
   margin: 20px 20px 20px 20px;
 }
 
 .weatherapp-container-title {
-  max-height: 30px;
-
+  max-height: 60px;
   display: flex;
   justify-content: left;
+  align-items: center;
+  font-size: 24px;
 }
 
 .weatherapp-text {
@@ -17,12 +19,17 @@
   width: 225px;
 }
 
-.weatherapp-forecast {
-  height: 300px;
+.weatherapp-summary {
+  display: flex;
+  flex-direction: column;
+  height: auto;
   width: 450px;
+  padding: 5px;
 }
 
 .weatherapp-stats {
-  height: 300px;
-  width: 225px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 450px;
 }
