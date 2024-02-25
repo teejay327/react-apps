@@ -12,12 +12,13 @@
 }
 
 .summary-titles {
-  width: 60%;
+  width: 150px;
   display: flex;
   flex-direction: row;
   font-size: 1.25em;
 }
 
 .summary-amounts {
+  width: 150px;
   margin: 10px 10px 10px 10px;
 }

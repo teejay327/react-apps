@@ -15,11 +15,10 @@ const App = () => {
         <BrowserRouter >
           <Navbar />
         </BrowserRouter >
-        <div className='weather-container'>
-          <WeatherApp />  
-        </div>       
-      </div>
+      </div>  
+          <WeatherApp />        
     </div>
+
  
   );
 }
