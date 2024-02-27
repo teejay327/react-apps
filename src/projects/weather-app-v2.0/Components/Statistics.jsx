@@ -8,8 +8,9 @@ import rain from '../assets/rainy-outline.svg';
 const Statistics = () => {
 
   return (
-    <div>
-
+    <div className='statistics'>
+      <h3>Tomorrow</h3>
+      <p> Possible showers</p>
     </div>
   )
 }
