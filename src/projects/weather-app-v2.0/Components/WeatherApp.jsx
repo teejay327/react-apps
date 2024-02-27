@@ -1,4 +1,5 @@
 import Summary from './Summary';
+import Statistics from './Statistics';
 import './WeatherApp.css';
 
 const WeatherApp = (props) => {
@@ -12,7 +13,10 @@ const WeatherApp = (props) => {
         <Summary />
       </div>
       <div className='weatherapp-stats' >
-
+        <div className='weatherapp-container-title'>
+            <h2>Statistics</h2>
+         </div> 
+        <Statistics /> 
       </div>
     </div>
   )
