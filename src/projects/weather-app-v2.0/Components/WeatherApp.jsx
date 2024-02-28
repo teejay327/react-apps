@@ -14,7 +14,7 @@ const WeatherApp = (props) => {
       </div>
       <div className='weatherapp-stats' >
         <div className='weatherapp-container-title'>
-            <h2>Statistics</h2>
+            <h2>Tomorrow</h2>
          </div> 
         <Statistics /> 
       </div>
