@@ -21,18 +21,20 @@
 }
 
 .stats-text {
-  width: 150px;
+  width: 160px;
   height: 50px;
   background-color: #53b9ea;
   border-radius: 5px;
   margin: 0 2px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .stats-text-title {
-  font-size: 0.75em;
+  font-size: 0.9em;
   color: #fff;
+  padding: 5px 0px 3px 0px;
 }
 
 .stats-text-numbers {
