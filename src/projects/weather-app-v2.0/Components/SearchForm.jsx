@@ -7,8 +7,19 @@ const SearchForm = (props) => {
     setLocation(e.target.value);
   }
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const locationData = {
+      enteredLocation: location
+    }
+
+    props.onSaveLocation(locationData);
+    setLocation('');
+  }
+
     return (
-      <form>
+      <form onSubmit={ submitHandler }>
         <div className='searchform'>
           <label>Search for a location</label>
           <input type='text' placeholder='Gold Coast' onChange={ locationChangeHandler } value={ location } />
