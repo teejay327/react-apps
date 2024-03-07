@@ -4,7 +4,7 @@
   margin-bottom: 0.3rem;
   text-align: left;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .searchform label {

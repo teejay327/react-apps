@@ -4,7 +4,7 @@ import './SearchForm.css';
 const SearchForm = (props) => {
   const [ location, setLocation ] = useState(props.location);
   const locationChangeHandler = (event) => {
-    setLocation(e.target.value);
+    setLocation(event.target.value);
   }
 
   const submitHandler = (event) => {
