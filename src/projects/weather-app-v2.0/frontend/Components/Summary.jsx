@@ -1,4 +1,4 @@
-import DATA from '../data.js';
+import DATA from '../../data.js';
 import './Summary.css';
 
 const Summary = () => {
