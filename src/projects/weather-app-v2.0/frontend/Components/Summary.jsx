@@ -1,4 +1,5 @@
-import DATA from '../../data.js';
+//import DATA from '../../data.js';
+import DATA from '../../backend/data.js';
 import './Summary.css';
 
 const Summary = () => {

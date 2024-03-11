@@ -1,5 +1,6 @@
+//import DATA from '../../data.js';
+import DATA from '../../backend/data.js';
 
-import DATA from '../../data.js';
 import './Statistics.css';
 import uvIndex from '../../assets/UVIndex.png';
 import wind from '../../assets/Wind.png';
