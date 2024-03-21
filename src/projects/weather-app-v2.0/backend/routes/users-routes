@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/users', (req, res, next) => {
   console.log('GET request in users');
   res.json({message: 'Users request made'})
 })
