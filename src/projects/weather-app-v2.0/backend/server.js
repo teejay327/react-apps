@@ -10,6 +10,7 @@ const port = 5000;
 console.log(port)
 
 const app = express();
+
 app.get('/', (req,res) => {
   res.send('API running ...');
 });
