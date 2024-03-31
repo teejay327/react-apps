@@ -15,6 +15,4 @@ const login = (req, res, next) {
 
 };
 
-exports.getUsers = getUsers;
-exports.signup = signup;
-exports.login = login;
+export default { getUsers, signup, login };
