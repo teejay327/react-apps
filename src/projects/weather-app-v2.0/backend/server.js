@@ -21,7 +21,7 @@ app.get('/api/DATA', (req,res) => {
   res.json(DATA);
 });
 
-app.use('api/users', usersRoutes);
+app.use('/api/users', usersRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
