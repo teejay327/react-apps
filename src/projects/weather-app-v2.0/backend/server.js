@@ -13,6 +13,7 @@ console.log(port)
 
 const app = express();
 
+/*
 app.get('/', (req,res) => {
   res.send('API running ...');
 });
@@ -20,8 +21,10 @@ app.get('/', (req,res) => {
 app.get('/api/DATA', (req,res) => {
   res.json(DATA);
 });
+*/
+app.use(express.json());
 
-app.use('/api/users', usersRoutes);
+app.use('/api/users/', usersRoutes); // perhaps not final slash!!!!!!!!!!!!!!!
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
