@@ -1,6 +1,7 @@
 import express from 'express';
 import{ v4 as uuidv4 } from 'uuid';
 import HttpError from '../models/http-error.js';
+import { validationResult } from 'express-validator';
 
 const DUMMY_USERS = [
   {
@@ -22,6 +23,11 @@ const getUsers = (req, res, next) => {
 };
 
 const signup = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    throw new HttpError('Invalid input during signup', 422)
+  }
+
   const { name, email, password} = req.body;
 
   const hasUser = DUMMY_USERS.find(user => user.email === email);
