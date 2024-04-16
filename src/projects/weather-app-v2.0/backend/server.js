@@ -34,5 +34,6 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || 'Unknown error occurred' });
 });
 
+
 // start the server
 app.listen(port, () => console.log(`Server running on port ${port}`));
