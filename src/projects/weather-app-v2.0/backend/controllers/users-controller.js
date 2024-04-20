@@ -1,4 +1,5 @@
 import express from 'express';
+import User from '../models/user-model.js';
 import{ v4 as uuidv4 } from 'uuid';
 import HttpError from '../models/http-error.js';
 import { validationResult } from 'express-validator';
@@ -22,7 +23,7 @@ const getUsers = (req, res, next) => {
   res.json({ users: DUMMY_USERS })
 };
 
-const signup = (req, res, next) => {
+const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     throw new HttpError('Invalid input during signup', 422)
@@ -30,21 +31,48 @@ const signup = (req, res, next) => {
 
   const { name, email, password} = req.body;
 
-  const hasUser = DUMMY_USERS.find(user => user.email === email);
-  if (hasUser) {
-    throw new HttpError('User not created. Email already exists', 422);
+  // const hasUser = DUMMY_USERS.find(user => user.email === email);
+  // if (hasUser) {
+  //   throw new HttpError('User not created. Email already exists', 422);
+  // }
+  let existingUser;
+  try {
+    existingUser = await User.findOne({ email: email })
+  } catch (err) {
+    const error = new HttpError('Sign up failed, please try again.', 500);
+    return next(error);
   }
 
-  const createdUser = {
-    id: uuidv4(),
+  if (existingUser) {
+    const error = new HttpError('User already exists.', 422);
+    return next(error);
+  }
+
+  const createdUser = new User({
     name,
     email,
-    password
-  };
+    password,
+    isAdmin 
+  });
 
-  DUMMY_USERS.push(createdUser);
+  // const createdUser = {
+  //   id: uuidv4(),
+  //   name,
+  //   email,
+  //   password
+  // };
 
-  res.status(201).json({ user: createdUser })
+  // DUMMY_USERS.push(createdUser);
+
+  try {
+    await createdUser.save();
+  } catch (err) {
+    const error = new HttpError('Sign up failed - please try again.', 500);
+    return next(error);
+  }
+
+  // getters: true removes underscore of id
+  res.status(201).json({ user: createdUser.toObject({ getters: true }) })
 };
 
 const login = (req, res, next) => {
