@@ -94,11 +94,12 @@ const login = async (req, res, next) => {
     existingUser = await User.findOne({ email: email });
   } catch (err) {
     const error = new HttpError('Log in unsuccessful - check your username and password.', 500);
-    return next(error)
+    return next(error);
   }
 
   if (!existingUser || existingUser.password !== password) {
     const error = new HttpError('Login unsuccessful - invalid credentials.', 401);
+    return next(error);
   }
 
   res.json({ message: 'Logged in!' });
