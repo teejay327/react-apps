@@ -9,13 +9,15 @@ const DUMMY_USERS = [
     id: 'u1',
     name: 'Tony Jones',
     email: 'test@test.com',
-    password: 'tester'
+    password: 'tester',
+    isAdmin: 'true'
   },
   {
     id: 'u2',
     name: 'Dasa Jones',
     email: 'test2@test.com',
-    password: 'tester2'
+    password: 'tester2',
+    isAdmin: 'true'
   }
 ]
 
@@ -77,15 +79,29 @@ const signup = async (req, res, next) => {
   res.status(201).json({ user: createdUser.toObject({ getters: true }) })
 };
 
-const login = (req, res, next) => {
+const login = async (req, res, next) => {
   const { email, password } = req.body;
 
-  const identifiedUser = DUMMY_USERS.find((user) => user.email === email);
-  if (!identifiedUser || identifiedUser.password !== password) {
-    throw new HttpError('Incorrect username or password', 401);
-  }
-  res.json({ message: 'Logged in!'});
+  // const identifiedUser = DUMMY_USERS.find((user) => user.email === email);
+  // if (!identifiedUser || identifiedUser.password !== password) {
+  //   throw new HttpError('Incorrect username or password', 401);
+  // }
+  // res.json({ message: 'Logged in!'});
 
+  let existingUser;
+
+  try {
+    existingUser = await User.findOne({ email: email });
+  } catch (err) {
+    const error = new HttpError('Log in unsuccessful - check your username and password.', 500);
+    return next(error)
+  }
+
+  if (!existingUser || existingUser.password !== password) {
+    const error = new HttpError('Login unsuccessful - invalid credentials.', 401);
+  }
+
+  res.json({ message: 'Logged in!' });
 };
 
 export default { getUsers, signup, login };
