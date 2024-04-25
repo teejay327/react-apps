@@ -1,28 +1,11 @@
 import express from 'express';
 import User from '../models/user-model.js';
-import{ v4 as uuidv4 } from 'uuid';
+// import{ v4 as uuidv4 } from 'uuid';
 import HttpError from '../models/http-error.js';
 import { validationResult } from 'express-validator';
 
-const DUMMY_USERS = [
-  {
-    id: 'u1',
-    name: 'Tony Jones',
-    email: 'test@test.com',
-    password: 'tester',
-    isAdmin: 'true'
-  },
-  {
-    id: 'u2',
-    name: 'Dasa Jones',
-    email: 'test2@test.com',
-    password: 'tester2',
-    isAdmin: 'true'
-  }
-]
-
 const getUsers = async (req, res, next) => {
-  // res.json({ users: DUMMY_USERS })
+ 
   let users;
   try {
     users = await User.find({}, '-password');
@@ -43,10 +26,6 @@ const signup = async (req, res, next) => {
 
   const { name, email, password, isAdmin } = req.body;
 
-  // const hasUser = DUMMY_USERS.find(user => user.email === email);
-  // if (hasUser) {
-  //   throw new HttpError('User not created. Email already exists', 422);
-  // }
   let existingUser;
   try {
     existingUser = await User.findOne({ email: email })
@@ -67,15 +46,6 @@ const signup = async (req, res, next) => {
     isAdmin 
   });
 
-  // const createdUser = {
-  //   id: uuidv4(),
-  //   name,
-  //   email,
-  //   password
-  // };
-
-  // DUMMY_USERS.push(createdUser);
-
   try {
     await createdUser.save();
   } catch (err) {
@@ -89,12 +59,6 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
-
-  // const identifiedUser = DUMMY_USERS.find((user) => user.email === email);
-  // if (!identifiedUser || identifiedUser.password !== password) {
-  //   throw new HttpError('Incorrect username or password', 401);
-  // }
-  // res.json({ message: 'Logged in!'});
 
   let existingUser;
 
