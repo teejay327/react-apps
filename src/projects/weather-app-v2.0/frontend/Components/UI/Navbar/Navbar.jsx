@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import Login from '../../../Components/Users/pages/Login.js'; // Apr 27
+import Login from '../../Users/components/Login.js'; // Apr 27
 import './Navbar.css';
 
 const Navbar = () => {
