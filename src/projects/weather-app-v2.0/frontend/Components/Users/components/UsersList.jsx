@@ -9,17 +9,17 @@ const UsersList = props => {
         <h2>No users found.</h2>
       </div>
     )
-  } else {
-    <ul>
-      { props.items.map((user) => {
-        return <UserItem 
-          key={ user.id } 
-          id={ user.id } 
-          name={ user.name } 
-          location={ user.location }/>
-      })}
-    </ul>
-  }
+  };
+
+  return <ul className="users-list">
+    { props.items.map((user) => {
+      return <UserItem 
+        key={ user.id } 
+        id={ user.id } 
+        name={ user.name } 
+        location={ user.location }/>
+    })}
+  </ul>
 }
 
 export default UsersList;
