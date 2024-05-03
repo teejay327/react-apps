@@ -21,3 +21,23 @@
   height: 2.5px;
   background: white;
 }
+
+/*Not sure about this */
+.nav-header-nav {
+  display: none;
+}
+
+.nav-drawer {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav-menu-btn {
+    display: none;
+  }
+
+  /*Not sure about this */
+  .main-navigation__header-nav {
+    display: block;
+  }
+}
