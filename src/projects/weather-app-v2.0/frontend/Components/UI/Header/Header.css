@@ -23,7 +23,7 @@
 }
 
 /*Not sure about this */
-.nav-header-nav {
+.header-nav {
   display: none;
 }
 
@@ -37,7 +37,7 @@
   }
 
   /*Not sure about this */
-  .main-navigation__header-nav {
+  .header-nav {
     display: block;
   }
 }
