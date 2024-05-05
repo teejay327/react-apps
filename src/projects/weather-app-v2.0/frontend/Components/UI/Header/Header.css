@@ -22,7 +22,6 @@
   background: white;
 }
 
-/*Not sure about this */
 .header-nav {
   display: none;
 }
@@ -36,7 +35,6 @@
     display: none;
   }
 
-  /*Not sure about this */
   .header-nav {
     display: block;
   }
