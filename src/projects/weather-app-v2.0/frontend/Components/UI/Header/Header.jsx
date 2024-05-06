@@ -2,15 +2,24 @@ import React, { useState } from 'react';
 import Navbar  from '../Navbar/Navbar';
 import { BrowserRouter } from 'react-router-dom';
 import SideDrawer from '../Elements/SideDrawer/SideDrawer.js';
-
+import Backdrop from '../Elements/Backdrop.js';
 import sunImg from '../../../../assets/sunny.png';
 import './Header.css';
 
 const Header = () => {
   const [ isDrawerOpen, setIsDrawerOpen ] = useState(false);
 
+  const openDrawer = () => {
+    setIsDrawerOpen(true);
+  }
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  }
+
   return (
     <React.Fragment>
+      { isDrawerOpen && <Backdrop onClick={ closeDrawer }/> }
       { isDrawerOpen && (
         <SideDrawer>
           <nav className='nav-drawer'>
@@ -19,9 +28,9 @@ const Header = () => {
             </BrowserRouter>
           </nav>
         </SideDrawer> 
-      )};
+      )}
       <div className='header'>
-        <button className='nav-menu-btn'>
+        <button className='nav-menu-btn' onClick={ openDrawer }>
           <span />
           <span />
           <span />
