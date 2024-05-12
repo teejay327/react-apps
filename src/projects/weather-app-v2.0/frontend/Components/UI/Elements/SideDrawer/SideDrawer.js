@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SideDrawer.css';
 
-const SideBar = props => {
+const SideDrawer = props => {
 
   return (
     <aside className='side-drawer'>
@@ -11,4 +11,4 @@ const SideBar = props => {
   )
 };
 
-export default SideBar;
+export default SideDrawer;
