@@ -1,8 +1,31 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+
 import './SearchForm.css';
 
+const inputReducer = (state, action) => {
+  switch (action.type) {
+    case 'CHANGE':
+      return {
+        ...state, 
+        value: action.val,
+        isValid: true
+      };
+    default: 
+      return state;
+  }
+}
+
+
 const SearchForm = (props) => {
+  const [inputState, dispatch] = useReducer(inputReducer, {value: 'Gold Coast', isValid: true});
+
+  const locationChangeHandlerOTHER = event => {
+    dispatch({ type: 'CHANGE', val: event.target.value });
+  };
+
   const [ location, setLocation ] = useState(props.location);
+
   const locationChangeHandler = (event) => {
     setLocation(event.target.value);
   }

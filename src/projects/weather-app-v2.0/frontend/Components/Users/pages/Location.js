@@ -1,8 +1,15 @@
 import React from 'react';
+import Input from '../../shared/FormElements/Input.jsx';
+
+import './Location.css';
 
 const Location = () => {
   return (
-    <div>Location</div>
+    <form className='location-form'>
+      <Input type="text" label="title" />
+      <div>Location</div>
+    </form>
+
   )
 }
 
