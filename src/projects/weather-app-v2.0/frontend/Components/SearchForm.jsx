@@ -24,7 +24,7 @@ const SearchForm = (props) => {
   //   dispatch({ type: 'CHANGE', val: event.target.value });
   // };
 
-  const [ location, setLocation ] = useState(props.location);
+  const [ location, setLocation ] = useState("");
 
   const locationChangeHandler = (event) => {
     setLocation(event.target.value);
@@ -40,7 +40,7 @@ const SearchForm = (props) => {
     //props.onSaveLocation(locationData);
     console.log(locationData);
     
-    setLocation('');
+    //setLocation('');
   }
 
     return (
