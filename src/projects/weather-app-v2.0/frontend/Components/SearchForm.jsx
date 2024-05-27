@@ -40,7 +40,7 @@ const SearchForm = (props) => {
     //props.onSaveLocation(locationData);
     console.log(locationData);
     
-    //setLocation('');
+    setLocation('');
   }
 
     return (

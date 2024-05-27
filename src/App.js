@@ -22,6 +22,7 @@ const App = () => {
           <Routes>
             <Route exact path="/location" element={ <Location /> } />
             <Route exact path="/today" element={ <Today /> } />
+            <Route exact path="/login" element={ <Login />} />
           </Routes>
         </div>
       </Router>
