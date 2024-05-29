@@ -5,12 +5,17 @@ import Button from '../../shared/FormElements/Button.js';
 import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators.js';
 import './Login.css';
 
+const loginSubmitHandler = event => {
+  event.preventDefault();
+  //console.log(formState.inputs);
+};
+
 const Login = () => {
   return (
     <Card className='login-header'>
       <h2>Login required</h2>
       <hr />
-      <form>
+      <form onSubmit={ loginSubmitHandler }>
         <Input 
           element='input' 
           id='email' 
@@ -29,7 +34,7 @@ const Login = () => {
           errorText="Password must contain at least 5 characters"
           //onInput={ inputHandler }
         />
-        //<Button type='submit' disabled={ !formState.isValid }>Login</Button>
+        <Button type='submit' disabled={ !formState.isValid }>Login</Button>
       </form>
     </Card>
   )

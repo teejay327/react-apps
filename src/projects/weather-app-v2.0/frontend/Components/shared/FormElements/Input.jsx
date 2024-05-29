@@ -28,11 +28,12 @@ const Input = props => {
     isValid: false 
   });
 
-  //const { value, isValid } = inputState;
+  const { onInput } = props;
+  const { value, isValid } = inputState;
 
   useEffect(() => {
     props.onInput(inputState.value, inputState.isValid)
-  }, [value, isValid, onInput]);
+  }, [inputState.value, inputState.isValid, props.onInput]);
 
   const changeHandler = event => {
     dispatch({ 
@@ -48,14 +49,14 @@ const Input = props => {
     });
   };
 
-  const element = 
+  const element = props.element === 'input' ? (
     <input 
       type={ props.type } 
       placeholder={ props.placeholder }
       onChange={ changeHandler }
       onBlur={ touchHandler }
       value={ inputState.value }
-    />
+    /> ) : null;
 
   return (
     <div className={`form-template ${!inputState.isValid && inputState.isTouched && 'form-invalid' }`}>
