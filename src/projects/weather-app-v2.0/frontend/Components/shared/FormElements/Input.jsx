@@ -23,17 +23,19 @@ const inputReducer = (state, action) => {
 
 const Input = props => {
   const [inputState, dispatch] = useReducer(inputReducer, { 
-    value: '', 
+    value: props.value || '', 
     isTouched: false,
-    isValid: false 
+    isValid: props.valid || false 
   });
 
-  const { onInput } = props;
+  const { id, onInput } = props;
   const { value, isValid } = inputState;
 
   useEffect(() => {
-    props.onInput(inputState.value, inputState.isValid)
-  }, [inputState.value, inputState.isValid, props.onInput]);
+   // props.onInput(props.id, inputState.value, inputState.isValid)
+   onInput(id, value, isValid)
+   //}, [inputState.value, inputState.isValid, props.onInput]);
+  }, [id, value, isValid, onInput]);
 
   const changeHandler = event => {
     dispatch({ 
@@ -51,6 +53,7 @@ const Input = props => {
 
   const element = props.element === 'input' ? (
     <input 
+      id={ props.id }
       type={ props.type } 
       placeholder={ props.placeholder }
       onChange={ changeHandler }
@@ -60,9 +63,9 @@ const Input = props => {
 
   return (
     <div className={`form-template ${!inputState.isValid && inputState.isTouched && 'form-invalid' }`}>
-      <label>{ props.label } </label>
+      <label htmlFor={ props.id }>{ props.label } </label>
       { element }
-      { !inputState.isValid && inputState.isTouched && <p>Invalid input</p> }
+      { !inputState.isValid && inputState.isTouched && <p>{ props.errorText }</p> }
     </div>
   )
 };
