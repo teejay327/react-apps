@@ -8,15 +8,26 @@ import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validato
 import { useForm } from '../../shared/hooks/form-hook.js';
 import './Login.css';
 
-const loginSubmitHandler = event => {
-  event.preventDefault();
-  console.log(formState.inputs);
-};
-
 const Login = () => {
   const [formState, inputHandler] = useForm(
-    { title: {value: '', isValid: false } }, false
+    //{ title: {value: '', isValid: false } }, false
+    {
+      email: {
+        value: '',
+        isValid: false
+      },
+      password: {
+        value: '',
+        isValid: false
+      }
+    },
+    false
   );
+
+  const loginSubmitHandler = event => {
+    event.preventDefault();
+    console.log(formState.inputs);
+  };
 
   return (
     <Card className='login-header'>
@@ -27,7 +38,7 @@ const Login = () => {
           element='input' 
           id='email' 
           type='email'
-          label='email' // Notice email is E-MAIL in model
+          label='email' // Notice email is E-Mail in model
           validators={[ VALIDATOR_EMAIL() ]} 
           errorText="Invalid email address"
           onInput={ inputHandler }
@@ -36,7 +47,7 @@ const Login = () => {
           element='input' 
           id='password' 
           type='password' 
-          label='email' 
+          label='Password' 
           validators={[ VALIDATOR_MINLENGTH(5) ]} 
           errorText="Password must contain at least 5 characters"
           onInput={ inputHandler }
