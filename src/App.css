@@ -1,6 +1,7 @@
 .app-container {
   background: linear-gradient(#065e81, #8ee0e0);
-  height: 900px;
+  padding: 4px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,7 +15,6 @@
 }
 
 .pages-container {
-
   display: flex;
   justify-content: center;
 }
