@@ -4,13 +4,11 @@ import Card from '../../UI/Elements/Card.js';
 import Input from '../../shared/FormElements/Input.jsx';
 import Button from '../../shared/FormElements/Button.js';
 import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from '../../shared/util/validators.js';
-//import { VALIDATOR_REQUIRE } from '../../shared/util/validators.js';
 import { useForm } from '../../shared/hooks/form-hook.js';
 import './Login.css';
 
 const Login = () => {
   const [formState, inputHandler] = useForm(
-    //{ title: {value: '', isValid: false } }, false
     {
       email: {
         value: '',
@@ -38,7 +36,7 @@ const Login = () => {
           element='input' 
           id='email' 
           type='email'
-          label='email' // Notice email is E-Mail in model
+          label='email'
           validators={[ VALIDATOR_EMAIL() ]} 
           errorText="Invalid email address"
           onInput={ inputHandler }
@@ -47,7 +45,7 @@ const Login = () => {
           element='input' 
           id='password' 
           type='password' 
-          label='Password' 
+          label='password' 
           validators={[ VALIDATOR_MINLENGTH(5) ]} 
           errorText="Password must contain at least 5 characters"
           onInput={ inputHandler }
