@@ -30,8 +30,9 @@ const Login = () => {
   return (
     <Card className='login-header'>
       <h2>Login required</h2>
-      <hr />
+      <hr />  
       <form onSubmit={ loginSubmitHandler }>
+      <div className='login-form-inputs'>
         <Input 
           element='input' 
           id='email' 
@@ -50,6 +51,7 @@ const Login = () => {
           errorText="Password must contain at least 5 characters"
           onInput={ inputHandler }
         />
+        </div>
         <Button type='submit' disabled={ !formState.isValid }>Login</Button>
       </form>
     </Card>
