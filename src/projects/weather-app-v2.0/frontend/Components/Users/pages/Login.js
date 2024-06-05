@@ -10,7 +10,7 @@ import './Login.css';
 const Login = () => {
   const [isLoginMode, setIsLoginMode] = useState(true);
 
-  const [formState, inputHandler] = useForm(
+  const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
         value: '',
@@ -25,6 +25,22 @@ const Login = () => {
   );
 
   const switchModeHandler = () => {
+    if (!isLoginMode) {
+      setFormData({
+          ...formState.inputs,
+          name: undefined
+        }, 
+        formState.inputs.email.isValid && formState.inputs.password.isValid
+      );
+    } else {
+      setFormData({
+        ...formState.inputs,
+        name: {
+          value: '',
+          isValid: false
+        }
+      }, false);
+    };
     setIsLoginMode(prevMode => !prevMode);
   };
 
@@ -72,7 +88,7 @@ const Login = () => {
         <Button type='submit' disabled={ !formState.isValid }>
           {isLoginMode ? 'Login' : 'Signup' }</Button>
       </form>
-      <Button inverse onClick={ switchModeHandler }>Switch to { isLoginMode ? 'Signup' : 'Login' }</Button>
+      <Button className='button-inverse' onClick={ switchModeHandler }>Switch to { isLoginMode ? 'Signup' : 'Login' }</Button>
     </Card>
   )
 };

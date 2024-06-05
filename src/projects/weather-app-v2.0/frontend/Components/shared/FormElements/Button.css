@@ -6,7 +6,8 @@
   background: #ff0055;
   color: white;
   cursor: pointer;
-  margin-right: 1rem;
+  margin: 1rem 1rem;
+
   text-decoration: none;
   display: inline-block;
 }
@@ -21,13 +22,13 @@
   border-color: #ff4382;
 }
 
-.button--inverse {
+.button-inverse {
   background: transparent;
   color: #ff0055;
 }
 
-.button--inverse:hover,
-.button--inverse:active {
+.button-inverse:hover,
+.button-inverse:active {
   color: white;
   background: #ff0055;
 }
