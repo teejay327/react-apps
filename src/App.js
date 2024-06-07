@@ -1,3 +1,4 @@
+import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import WeatherApp from './projects/weather-app-v2.0/frontend/Components/WeatherApp.jsx';
@@ -6,12 +7,24 @@ import SearchForm from './projects/weather-app-v2.0/frontend/Components/SearchFo
 import Location from './projects/weather-app-v2.0/frontend/Components/Users/pages/Location.js';
 import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/Today.js';
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
+import { AuthContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
   return (
+    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
     <div className='app-container' >
       <div className='logo-title'>
         <Header />
@@ -32,6 +45,7 @@ const App = () => {
         <WeatherApp /> 
       </div>            
     </div>
+    </AuthContext.Provider>
   );
 }
 
