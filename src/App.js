@@ -7,7 +7,9 @@ import SearchForm from './projects/weather-app-v2.0/frontend/Components/SearchFo
 import Location from './projects/weather-app-v2.0/frontend/Components/Users/pages/Location.js';
 import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/Today.js';
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
-import { AuthContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
+import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Home.jsx';
+import FiveDays from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDays.jsx';
+import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
@@ -23,8 +25,17 @@ const App = () => {
     setIsLoggedIn(false);
   }, []);
 
+  // let routes;
+
+  // if (isLoggedIn) {
+  //   routes = ();  Put in ALL THE ROUTES <Route exact path="/" element={ <Home />} />
+  // } else {
+  //   routes = ();
+  // }
+
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
+    <LoginContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
     <div className='app-container' >
       <div className='logo-title'>
         <Header />
@@ -33,8 +44,10 @@ const App = () => {
       <Router>
         <div className='pages-container'>
           <Routes>
+            <Route exact path="/" element={ <Home />} />
             <Route exact path="/location" element={ <Location /> } />
             <Route exact path="/today" element={ <Today /> } />
+            <Route exact path="/5days" element={ <FiveDays />} />
             <Route exact path="/login" element={ <Login />} />
           </Routes>
         </div>
@@ -45,7 +58,7 @@ const App = () => {
         <WeatherApp /> 
       </div>            
     </div>
-    </AuthContext.Provider>
+    </LoginContext.Provider>
   );
 }
 

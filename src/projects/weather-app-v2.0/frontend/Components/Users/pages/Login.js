@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Card from '../../UI/Elements/Card.js';
 import Input from '../../shared/FormElements/Input.jsx';
 import Button from '../../shared/FormElements/Button.js';
 import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from '../../shared/util/validators.js';
 import { useForm } from '../../shared/hooks/form-hook.js';
+import { LoginContext } from '../../shared/context/login-context.js';
 import './Login.css';
 
 const Login = () => {
+  const login = useContext(LoginContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
 
   const [formState, inputHandler, setFormData] = useForm(
@@ -47,6 +49,7 @@ const Login = () => {
   const loginSubmitHandler = event => {
     event.preventDefault();
     console.log(formState.inputs);
+    login.login();
   };
 
   return (
