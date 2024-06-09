@@ -25,13 +25,26 @@ const App = () => {
     setIsLoggedIn(false);
   }, []);
 
-  // let routes;
+  let routes;
 
-  // if (isLoggedIn) {
-  //   routes = ();  Put in ALL THE ROUTES <Route exact path="/" element={ <Home />} />
-  // } else {
-  //   routes = ();
-  // }
+  if (isLoggedIn) {
+    console.log("Hi", isLoggedIn);
+    routes = (
+      <Routes>
+        <Route exact path="/" element={ <Home />} />
+        <Route exact path="/location" element={ <Location /> } />
+        <Route exact path="/today" element={ <Today /> } />
+        <Route exact path="/5days" element={ <FiveDays />} />
+      </Routes>
+    );
+  } else {
+    routes = (
+      <Routes>
+          <Route exact path="/" element={ <Home />} />
+          <Route exact path="/login" element={ <Login />} />
+      </Routes>
+    );
+  }
 
 
   return (
@@ -43,13 +56,9 @@ const App = () => {
 
       <Router>
         <div className='pages-container'>
-          <Routes>
-            <Route exact path="/" element={ <Home />} />
-            <Route exact path="/location" element={ <Location /> } />
-            <Route exact path="/today" element={ <Today /> } />
-            <Route exact path="/5days" element={ <FiveDays />} />
-            <Route exact path="/login" element={ <Login />} />
-          </Routes>
+
+            { routes }
+
         </div>
       </Router>
 
