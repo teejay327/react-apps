@@ -1,9 +1,14 @@
 import React from 'react';
 import Input from '../../shared/FormElements/Input.jsx';
 
+import { useForm } from '../../shared/hooks/form-hook.js';
+
 import './Location.css';
 
-// needs form
+
+
+
+// needs form for location
 
 const Location = () => {
   return (
