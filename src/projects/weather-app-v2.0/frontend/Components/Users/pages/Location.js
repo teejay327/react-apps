@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from '../../shared/FormElements/Input.jsx';
 
+// perhaps not necessary
 import { useForm } from '../../shared/hooks/form-hook.js';
 
 import './Location.css';

@@ -38,6 +38,7 @@ const App = () => {
       </Routes>
     );
   } else {
+    console.log("Hi you", isLoggedIn);
     routes = (
       <Routes>
           <Route exact path="/" element={ <Home />} />
