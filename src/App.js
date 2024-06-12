@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 
 import WeatherApp from './projects/weather-app-v2.0/frontend/Components/WeatherApp.jsx';
 import Header from './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.jsx';
@@ -9,7 +10,7 @@ import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/T
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
 import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Home.jsx';
 import FiveDays from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDays.jsx';
-import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
+import NotFoundPage from './projects/weather-app-v2.0/frontend/Components/Users/pages/NotFound.jsx';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
@@ -34,6 +35,7 @@ const App = () => {
         <Route exact path="/location" element={ <Location /> } />
         <Route exact path="/today" element={ <Today /> } />
         <Route exact path="/5days" element={ <FiveDays />} />
+        <Route path="*" element={ <NotFoundPage/> } />
       </Routes>
     );
   } else {
