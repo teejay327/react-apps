@@ -8,7 +8,7 @@ import Location from './projects/weather-app-v2.0/frontend/Components/Users/page
 import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/Today.js';
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
 import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Home.jsx';
-import FiveDays from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDays.jsx';
+import FiveDayForecast from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDays.jsx';
 import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
@@ -47,7 +47,7 @@ const App = () => {
             <Route exact path="/" element={ <Home />} />
             <Route exact path="/location" element={ <Location /> } />
             <Route exact path="/today" element={ <Today /> } />
-            <Route exact path="/5days" element={ <FiveDays />} />
+            <Route exact path="/5days" element={ <FiveDayForecast />} />
             <Route exact path="/login" element={ <Login />} />
           </Routes>
         </div>

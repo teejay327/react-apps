@@ -1,0 +1,75 @@
+.fivedayforecast {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fivedayforecast-container {
+  text-align: center;
+  width: 46rem;
+}
+
+.fivedayforecast-img {
+  background: #53b9ea;
+}
+
+.fivedayforecast-icon {
+  width: 50px;
+  height: 50px;
+  background: #98cfdc;
+  color: #ffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.fivedayforecast-text {
+  width: 150px;
+  height: 50px;
+  background-color: #53b9ea;
+  border-radius: 5px;
+  margin: 0 2px;
+}
+
+.fivedayforecast-date {
+  font-size: 0.75em;
+  color: #fff;
+}
+
+.fivedayforecast-mintemp {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.fivedayforecast-maxtemp {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.fivedayforecast-rainchance {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.fivedayforecast-rainamount {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.fivedayforecast ul {
+  list-style: none;
+}
+
+.fivedayforecast-box li {
+  margin: 3px;
+  display: grid;
+  grid-template-columns: 15% 25% 15% 15% 15% 15%;
+  grid-template-rows: 4rem;
+  min-width: 30rem;
+}
+
+.fivedayforecast-box ul {
+  background-color: #53b9ea;
+}

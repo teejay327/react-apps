@@ -25,7 +25,7 @@ const Navbar = (props) => {
             )}
             { login.isLoggedIn && (
             <li className='navbar-elements'>
-              <NavLink to="/5days">5-day forecast</NavLink>
+              <NavLink to="/5dayforecast">5-day forecast</NavLink>
             </li>
             )}
             { !login.isLoggedIn && (
