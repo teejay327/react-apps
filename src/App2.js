@@ -8,13 +8,13 @@ import Location from './projects/weather-app-v2.0/frontend/Components/Users/page
 import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/Today.js';
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
 import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Home.jsx';
-import FiveDayForecast from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDays.jsx';
+import FiveDayForecast from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDayForecast.jsx';
 import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
 
-const App = () => {
+const App2 = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const login = useCallback(() => {
@@ -62,4 +62,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App2;
