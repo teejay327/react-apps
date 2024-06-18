@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { createBrowerRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 import WeatherApp from './projects/weather-app-v2.0/frontend/Components/WeatherApp.jsx';
@@ -16,6 +16,12 @@ import NotFoundPage from './projects/weather-app-v2.0/frontend/Components/Users/
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
 
+// new code here
+const router = createBrowserRouter([
+  { path: '/', element: <Home /> },
+  { path: '/location', element: <Location /> }
+]);
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -27,26 +33,26 @@ const App = () => {
     setIsLoggedIn(false);
   }, []);
 
-  let routes;
+  // let routes;
 
-  if (isLoggedIn) {
-    routes = (
-      <Routes>
-        <Route exact path="/" element={ <Home />} />
-        <Route exact path="/location" element={ <Location /> } />
-        <Route exact path="/today" element={ <Today /> } />
-        <Route exact path="/5dayforecast" element={ <FiveDayForecast />} />
-        <Route path="*" element={ <NotFoundPage/> } />
-      </Routes>
-    );
-  } else {
-    routes = (
-      <Routes>
-          <Route exact path="/" element={ <Home />} />
-          <Route exact path="/login" element={ <Login />} />
-      </Routes>
-    );
-  }
+  // if (isLoggedIn) {
+  //   routes = (
+  //     <Routes>
+  //       <Route exact path="/" element={ <Home />} />
+  //       <Route exact path="/location" element={ <Location /> } />
+  //       <Route exact path="/today" element={ <Today /> } />
+  //       <Route exact path="/5dayforecast" element={ <FiveDayForecast />} />
+  //       <Route path="*" element={ <NotFoundPage/> } />
+  //     </Routes>
+  //   );
+  // } else {
+  //   routes = (
+  //     <Routes>
+  //         <Route exact path="/" element={ <Home />} />
+  //         <Route exact path="/login" element={ <Login />} />
+  //     </Routes>
+  //   );
+  // }
 
   return (
     <LoginContext.Provider value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}>
@@ -55,12 +61,13 @@ const App = () => {
         <Header />
       </div>
 
-      <Router>
+      {/* <Router>
         <div className='pages-container'>
             { routes }
         </div>
-      </Router>
-
+      </Router> */}
+      <RouterProvider router={ router } />
+      
       <div>
         <SearchForm />
         <WeatherApp /> 
