@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowerRouter } from 'react-router-dom';
 
+import { LoginContext } from './projects/weather-app-v2.0/frontend/Components/shared/context/login-context.js';
 import WeatherApp from './projects/weather-app-v2.0/frontend/Components/WeatherApp.jsx';
 import Header from './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.jsx';
 import SearchForm from './projects/weather-app-v2.0/frontend/Components/SearchForm.jsx';
