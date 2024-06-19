@@ -19,9 +19,14 @@ import './App.css';
 
 // new code here
 const router = createBrowserRouter([
-  { path: '/', element: <RootLayout />},
-  { path: '/', element: <Home /> },
-  { path: '/location', element: <Location /> }
+  { 
+    path: '/', 
+    element: <RootLayout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/location', element: <Location /> }
+    ],
+  },
 ]);
 
 const App = () => {
