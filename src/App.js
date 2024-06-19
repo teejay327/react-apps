@@ -11,6 +11,7 @@ import Today from './projects/weather-app-v2.0/frontend/Components/Users/pages/T
 import Login from './projects/weather-app-v2.0/frontend/Components/Users/pages/Login.js';
 import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Home.jsx';
 import FiveDayForecast from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDayForecast.jsx';
+import RootLayout from './projects/weather-app-v2.0/frontend/Components/Users/pages/RootLayout.js';
 import NotFoundPage from './projects/weather-app-v2.0/frontend/Components/Users/pages/NotFound.jsx';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
@@ -18,6 +19,7 @@ import './App.css';
 
 // new code here
 const router = createBrowserRouter([
+  { path: '/', element: <RootLayout />},
   { path: '/', element: <Home /> },
   { path: '/location', element: <Location /> }
 ]);
