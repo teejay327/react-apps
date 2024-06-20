@@ -50,13 +50,18 @@ const Location = () => {
       inputId: id })
   }, []);
 
+  const locationSubmitHandler = event => {
+    event.preventDefault();
+    console.log(formState.inputs);
+  }
+
   return (
-    <form className="location-form">
+    <form className="location-form" onSubmit={ locationSubmitHandler }>
       <Input 
         id="location"
         element="input" 
         type="text" 
-        label="title" 
+        label="location" 
         validators={[ VALIDATOR_REQUIRE() ]} 
         errortext="Please enter a valid location"
         onInput={ locationChangeHandler }
