@@ -13,7 +13,7 @@ const Navbar = (props) => {
             <li className='navbar-elements'>
               <NavLink to="/" exact="true">Home</NavLink>
             </li>
-            { login.isLoggedIn && (
+            { !login.isLoggedIn && (
             <li className='navbar-elements'>
               <NavLink to="/location">Location</NavLink>
             </li>
