@@ -58,3 +58,11 @@ export const useForm = (initialInputs, initialFormValidity) => {
 
   return [formState, inputHandler, setFormData];
 };
+
+// const locationChangeHandler = useCallback((id, value, isValid) => {
+//   dispatch({ 
+//     type: 'LOCATION_CHANGE', 
+//     value: value, 
+//     isValid: isValid, 
+//     inputId: id })
+// }, []);
