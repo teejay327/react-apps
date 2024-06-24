@@ -33,15 +33,13 @@ body {
   text-decoration: none;
 }
 
-.navbar-elements:active {
-  background-color: yellow;
-}
-
-.navbar-elements:hover {
-  background-color: seagreen;
-}
-
 .navbar-elements a:visited {
-  text-decoration: none;
-  color: slategray;
+  text-decoration: underline;
+  color: slategrey;
 }
+
+.navbar-elements a:hover,
+.navbar-elements a.active {
+  color: yellow;
+}
+
