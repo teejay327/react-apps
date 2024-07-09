@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-container {
+  display: flex;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 15px;
+  justify-content: space-between;
+  max-height: 24px;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: 0;
+}
+
+.navbar-elements{
+  color: #fff;
+  align-items: stretch;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.navbar-container ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-elements a {
+  text-decoration: none;
+}
+
+.navbar-elements a:visited {
+  text-decoration: underline;
+  color: slategrey;
+}
+
+.navbar-elements a:hover,
+.navbar-elements a.active {
+  color: yellow;
+}
+
