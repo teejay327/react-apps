@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import Login from '../Users/pages/Login.js';
 import { LoginContext } from '../shared/context/login-context.js';
-import Header1 from '../UI/Header/Header1.jsx';
+//import Header1 from '../UI/Header/Header1.jsx';
 import './MainNavigation.css';
 
 const MainNavigation = (props) => {
@@ -11,7 +11,6 @@ const MainNavigation = (props) => {
 
     return (
     <nav className='navbar-container'>
-
       <ul >
         <li className='navbar-elements'>
           <NavLink to="/" exact="true">Home</NavLink>

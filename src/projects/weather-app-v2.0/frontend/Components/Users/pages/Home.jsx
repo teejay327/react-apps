@@ -3,7 +3,9 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className="home-location">
+      Weather for Gold Coast, QLD, Australia
+    </div>
   )
 }
 
