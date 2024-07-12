@@ -73,10 +73,11 @@ const App = () => {
             { routes }
         </div>
       </Router> */}
-      <RouterProvider router={ router } />
+      
       
       <div>
         <SearchForm />
+        <RouterProvider router={ router } />
         <WeatherApp /> 
       </div>            
     </div>

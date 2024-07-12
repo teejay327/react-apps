@@ -2,7 +2,6 @@ import React from 'react';
 import Input from '../../shared/FormElements/Input.jsx';
 import { VALIDATOR_REQUIRE } from '../../shared/util/validators.js';
 import Button from '../../shared/FormElements/Button.js';
-// perhaps not necessary
 import { useForm } from '../../shared/hooks/form-hook.js';
 
 import './Location.css';
