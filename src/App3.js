@@ -25,7 +25,10 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/location', element: <Location /> }
+      { path: '/location', element: <Location /> },
+      { path: '/today', element: <Today /> },
+      { path: '5dayforecast', element: <FiveDayForecast />},
+      { path: 'login', element: <Login />}
     ],
   },
 ]);
