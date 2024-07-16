@@ -53,46 +53,48 @@ const Login = () => {
   };
 
   return (
-    <Card className='login-header'>
-      <h2>Login required</h2>
-      <hr />  
-      <form onSubmit={ loginSubmitHandler }>
-        {!isLoginMode && (
+    <div className='login-container'>
+      <Card className='login-header'>
+        <h2>Login required</h2>
+        <hr />  
+        <form onSubmit={ loginSubmitHandler }>
+          {!isLoginMode && (
+            <Input 
+              element='input'
+              id='name' 
+              type='text' 
+              label='Your name' 
+              validators={[ VALIDATOR_REQUIRE() ]}
+              errorText="Please enter a name"
+              onInput={ inputHandler }
+            />
+          )}
+        <div className='login-form-inputs'>
           <Input 
-            element='input'
-            id='name' 
-            type='text' 
-            label='Your name' 
-            validators={[ VALIDATOR_REQUIRE() ]}
-            errorText="Please enter a name"
+            element='input' 
+            id='email' 
+            type='email'
+            label='email'
+            validators={[ VALIDATOR_EMAIL() ]} 
+            errorText="Invalid email address"
             onInput={ inputHandler }
           />
-        )}
-      <div className='login-form-inputs'>
-        <Input 
-          element='input' 
-          id='email' 
-          type='email'
-          label='email'
-          validators={[ VALIDATOR_EMAIL() ]} 
-          errorText="Invalid email address"
-          onInput={ inputHandler }
-        />
-        <Input 
-          element='input' 
-          id='password' 
-          type='password' 
-          label='password' 
-          validators={[ VALIDATOR_MINLENGTH(5) ]} 
-          errorText="Password must contain at least 5 characters"
-          onInput={ inputHandler }
-        />
-        </div>
-        <Button type='submit' disabled={ !formState.isValid }>
-          {isLoginMode ? 'Login' : 'Signup' }</Button>
-      </form>
-      <Button className='button-inverse' onClick={ switchModeHandler }>Switch to { isLoginMode ? 'Signup' : 'Login' }</Button>
-    </Card>
+          <Input 
+            element='input' 
+            id='password' 
+            type='password' 
+            label='password' 
+            validators={[ VALIDATOR_MINLENGTH(5) ]} 
+            errorText="Password must contain at least 5 characters"
+            onInput={ inputHandler }
+          />
+          </div>
+          <Button type='submit' disabled={ !formState.isValid }>
+            {isLoginMode ? 'Login' : 'Signup' }</Button>
+        </form>
+        <Button className='button-inverse' onClick={ switchModeHandler }>Switch to { isLoginMode ? 'Signup' : 'Login' }</Button>
+      </Card>
+    </div>
   )
 };
 
