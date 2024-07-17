@@ -1,6 +1,6 @@
 .weatherapp-container {
   display: flex;
-  height: 350px;
+  height: auto;
   width: auto;
   justify-content: center;
   margin: 50px 20px 20px 20px;
