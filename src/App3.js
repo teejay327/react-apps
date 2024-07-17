@@ -70,12 +70,9 @@ const App = () => {
       <div className='logo-title'>
         <Header />
       </div>
-
-
-      <RouterProvider router={ router } />
-      
       <div>
         <SearchForm />
+        <RouterProvider router={ router } />
         <WeatherApp /> 
       </div>            
     </div>
