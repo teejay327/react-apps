@@ -34,15 +34,15 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // const login = useCallback(() => {
-  //   setIsLoggedIn(true);
-  // }, []);
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
 
-  // const logout = useCallback(() => {
-  //   setIsLoggedIn(false);
-  // }, []);
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
 
   // let routes;
 
