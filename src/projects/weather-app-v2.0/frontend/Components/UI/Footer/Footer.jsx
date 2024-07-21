@@ -14,7 +14,7 @@ const Footer = () => {
         <ul>
           <div className="footer-logo">
           <li>
-            <h3>WeatherLink</h3>
+            <h3>WeatherLink&copy;{ currentYear }</h3>
           </li>
           </div>
 
@@ -33,12 +33,6 @@ const Footer = () => {
               <a className="socialmedia" href="https://twitter.com/login">
                 <img src={ twitter } alt="Twitter logo" width="30" height="30"></img>
               </a>
-            </li>
-          </div>
-
-          <div className="footer-notes">
-            <li>
-              <div>WeatherLink &copy;{ currentYear }</div>
             </li>
           </div>
         </ul>
