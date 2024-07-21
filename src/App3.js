@@ -13,6 +13,7 @@ import Home from './projects/weather-app-v2.0/frontend/Components/Users/pages/Ho
 import FiveDayForecast from './projects/weather-app-v2.0/frontend/Components/Users/pages/FiveDayForecast.jsx';
 import RootLayout from './projects/weather-app-v2.0/frontend/Components/Users/pages/RootLayout.js';
 import NotFoundPage from './projects/weather-app-v2.0/frontend/Components/Users/pages/NotFound.jsx';
+import Footer from './projects/weather-app-v2.0/frontend/Components/UI/Footer/Footer.jsx';
 
 import './projects/weather-app-v2.0/frontend/Components/UI/Header/Header.css';
 import './App.css';
@@ -74,7 +75,10 @@ const App = () => {
         <SearchForm />
         <RouterProvider router={ router } />
         <WeatherApp /> 
-      </div>            
+      </div> 
+      <div className='footer'>
+        <Footer />
+      </div>         
     </div>
   );
 }

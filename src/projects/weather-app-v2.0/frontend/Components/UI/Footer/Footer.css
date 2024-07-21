@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  color: #fff;
+  background-color: #065e81;
+  align-items: center;
+  gap: 2rem;
+  height: 5rem;
+}
+
+.footer ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  min-width: 35rem;
+  justify-content: space-between;
+}
+
+.footer-socialmedia {
+  display: flex;
+  flex-direction: row; 
+}
+
+.footer li {
+  margin: 3px;
+}
+
+.footer-nav {
+  justify-content: space-between;
+}
