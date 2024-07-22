@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import weatherRoutes from './routes/weather-routes.js';
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ console.log(port)
 const app = express();
 
 /*
+// app.get('/') and app.get('/api/DATA') were commented out 
+
 app.get('/', (req,res) => {
   res.send('API running ...');
 });
@@ -29,6 +32,8 @@ app.get('/api/DATA', (req,res) => {
 app.use(express.json());
 
 app.use('/api/users/', usersRoutes); // perhaps not final slash!!!!!!!!!!!!!!!
+// new code underneath
+app.use('/api/weather', weatherRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
