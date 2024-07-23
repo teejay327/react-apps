@@ -15,13 +15,8 @@ const inputReducer = (state, action) => {
   }
 }
 
-
 const SearchForm = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {value: 'Gold Coast', isValid: true});
-
-  // const locationChangeHandlerOTHER = event => {
-  //   dispatch({ type: 'CHANGE', val: event.target.value });
-  // };
 
   const [ location, setLocation ] = useState("");
 
@@ -31,14 +26,14 @@ const SearchForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
     const locationData = {
       enteredLocation: location
     }
 
     //props.onSaveLocation(locationData);
     console.log(locationData);
-    
+    //added onSubmit below
+    onSubmit(locationData);
     setLocation('');
   }
 
