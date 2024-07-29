@@ -15,7 +15,7 @@ const inputReducer = (state, action) => {
   }
 }
 
-const SearchForm = (props) => {
+const SearchForm = (props, { submitHandler }) => {
   const [inputState, dispatch] = useReducer(inputReducer, {value: 'Gold Coast', isValid: true});
 
   const [ location, setLocation ] = useState("");
@@ -24,18 +24,15 @@ const SearchForm = (props) => {
     setLocation(event.target.value);
   }
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    const locationData = {
-      enteredLocation: location
-    }
+  // const submitHandler = (event) => {
+  //   event.preventDefault();
+  //   const locationData = {
+  //     enteredLocation: location
+  //   }
 
-    //props.onSaveLocation(locationData);
-    console.log(locationData);
-    //added onSubmit below
-    onSubmit(locationData);
-    setLocation('');
-  }
+  //   console.log(locationData);
+  //   setLocation('');
+  // }
 
     return (
       <form onSubmit={ submitHandler }>
@@ -53,22 +50,3 @@ const SearchForm = (props) => {
 };
 
 export default SearchForm;
-
-
-// <form className="location-form" onSubmit={ locationSubmitHandler }>
-// <Input 
-//   id="location"
-//   element="input" 
-//   type="text" 
-//   label="location" 
-//   validators={[ VALIDATOR_REQUIRE() ]} 
-//   errortext="Please enter a valid location"
-//   onInput={ locationChangeHandler }
-//   />
-// <Button
-//   type="submit" 
-//   className="location-form-button"
-//   disabled={ !formState.isValid } >
-//     Set location
-// </Button>
-// </form>

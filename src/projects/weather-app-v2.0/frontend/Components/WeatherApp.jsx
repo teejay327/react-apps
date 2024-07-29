@@ -2,7 +2,24 @@ import Summary from './Summary';
 import Statistics from './Statistics';
 import './WeatherApp.css';
 
+import { useState } from 'react';
+
 const WeatherApp = (props) => {
+  const [ location, setLocation ] = useState("");
+
+  const locationChangeHandler = (event) => {
+    setLocation(event.target.value);
+  }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const locationData = {
+      enteredLocation: location
+    }
+
+    console.log(locationData);
+    setLocation('');
+  }
 
   return (
     <div className='weatherapp-container'>
