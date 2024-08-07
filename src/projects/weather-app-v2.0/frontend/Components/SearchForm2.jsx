@@ -15,15 +15,24 @@ import React, { useState } from 'react';
       */
 
 const SearchForm2 = ({ setLocation2 }) => {
- // const locationData = "Carrara, QLD, Australia";
-  const locationData = useState('');
+  //const locationData = "Carrara, QLD, Australia";
+  const [inputValue, setInputValue] = useState('');
+
+  const inputChangeHandler = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const submitHandler = (event) => { 
+    event.preventDefault();
+    console.log(`Form submitted with input: ${inputValue}`);
+  };
 
   return (
-    <form>
+    <form onSubmit={ submitHandler }>
       <div>
         <label>Search for a new location</label>
-        <input type='text' value={ locationData } />
-        <button type='button' onClick={() => setLocation2(locationData)} >Click SearchForm2</button>
+        <input type='text' value={ inputValue } onChange={ inputChangeHandler }/>
+        <button type='submit' >Submit</button>
       </div>
     </form>
   )
