@@ -11,6 +11,10 @@ const Home = () => {
     setLocationData(enteredLocation);
   };
 
+  const apiKey = process.env.WEATHERAPI_KEY;
+
+  
+
   return (
     <div className="home-location">
       Weather for { locationData }
