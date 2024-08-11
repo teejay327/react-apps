@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import SearchForm from '../../SearchForm';
 import SearchForm2 from '../../SearchForm2';
-import apiKey from '../../../../../../../../react-apps/.env';
 import './Home.css';
 
 const Home = () => {
@@ -15,6 +14,7 @@ const Home = () => {
   const apiKey = process.env.WEATHERAPI_KEY;
   const apiUrl = process.env.WEATHERAPI_URL;
   
+  console.log(apiUrl);
 
   return (
     <div className="home-location">
