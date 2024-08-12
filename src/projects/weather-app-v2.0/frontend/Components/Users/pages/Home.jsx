@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchForm from '../../SearchForm';
 import SearchForm2 from '../../SearchForm2';
 import './Home.css';
