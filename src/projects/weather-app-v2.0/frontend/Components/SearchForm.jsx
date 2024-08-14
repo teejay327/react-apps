@@ -15,8 +15,18 @@ const inputReducer = (state, action) => {
   }
 }
 
+const SearchForm = ({ props }) => {
+    // const [inputValue, setInputValue] = useState('');
 
-const SearchForm = (props) => {
+    // const inputChangeHandler = (event) => {
+    //   setInputValue(event.target.value);
+    // };
+
+    // const submitHandler = (event) => {
+    //   event.preventDefault();
+    //   console.log(`Form submitted with input: ${ inputValue }`);
+    //   setLocation2(inputValue);
+    // }
   const [inputState, dispatch] = useReducer(inputReducer, {value: 'Gold Coast', isValid: true});
 
   const [ location, setLocation ] = useState("");
@@ -32,9 +42,6 @@ const SearchForm = (props) => {
       enteredLocation: location
     }
 
-    //props.onSaveLocation(locationData);
-    console.log(locationData);
-    
     setLocation('');
   }
 
