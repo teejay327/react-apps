@@ -4,7 +4,7 @@ const AddUser = props => {
   
   return (
     <div>
-      Added element
+      Add
     </div>
   )
 }
